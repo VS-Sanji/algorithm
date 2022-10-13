@@ -44,24 +44,35 @@ public class minLengthSubArray {
         int minLength = 0;
         for (int last = 0; last < nums.length; last++) {
             sum += nums[last];//进入循环首先加上尾部元素
-            if (sum >= val) {//判断是否大于等于目标值，是则需要操作起始下标右移，否则直接进入下次循环
-                if (begin == 0) {//起始下标为0，初始化minLength
+            if (sum >= val) {
+                if (begin == 0) {
                     minLength = last - begin + 1;
                 }
-                while (true) {//找到以该last为尾元素的最短子数组
-                    if ((sum -= nums[begin]) >= val) {//去除此时的首元素，判断是否仍然大于等于目标值
-                        begin++;//首元素下标右移
-                    }else {
-                        break;
-                    }
+                while ((sum -= nums[begin]) >= val) {
+                    begin++;//不包含首元素的部分仍然满足条件，则begin向前移位
                 }
-                length = last - begin + 1;//获取以该last为尾元素的最短子数组的长度
-                begin++;//首部继续右移
-                if (minLength > length) {//判断最终的minLength是否需要更新
-                    minLength = length;
-                }
+                length = last - begin + 1;//找到该last对应的最小长度子数组，记录为一个length
+                begin++;//不包含首元素的部分不满足条件，则begin向前移位，进入外循环last往后移位
             }
+             minLength = Math.min(minLength, length);//比较记录的length与minLength，取最小为新的minLength
+
+
         }
         return minLength;
+    }
+
+    // 滑动窗口
+    public int minSubArrayLen(int s, int[] nums) {
+        int left = 0;
+        int sum = 0;
+        int result = Integer.MAX_VALUE;
+        for (int right = 0; right < nums.length; right++) {
+            sum += nums[right];
+            while (sum >= s) {
+                result = Math.min(result, right - left + 1);
+                sum -= nums[left++];
+            }
+        }
+        return result == Integer.MAX_VALUE ? 0 : result;
     }
 }
