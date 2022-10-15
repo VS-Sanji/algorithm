@@ -29,40 +29,46 @@ public class generateMatrix {
 
     //左闭右开写法
     public static int[][] genMatrix(int val) {
-        int oldVal = val;
         int num = 1;//初始化为1
         int squared = val * val;
         int[][] array_2d = new int[val][val];
-        int loop = val / 2;
+        int loop = val / 2;//总共转的圈数
         int count = 1;//计数，表示转第几圈
+        int begin = count - 1;//左界
+        int last = val - 1;//右界
 
         while (count <= loop) {
 
-            val--;
-            for (int top = count - 1; top < val; top++) {
-                array_2d[count - 1][top] = num;
+            //上
+            for (int top = begin; top < last; top++) {
+                array_2d[begin][top] = num;
                 num++;
             }
 
-            for (int right = count - 1; right < val; right++) {
-                array_2d[right][val] = num;
+            //右
+            for (int right = begin; right < last; right++) {
+                array_2d[right][last] = num;
                 num++;
             }
 
-            for (int down = val; down > count - 1; down--) {
-                array_2d[val][down] = num;
+            //下
+            for (int down = last; down > begin; down--) {
+                array_2d[last][down] = num;
                 num++;
             }
 
-            for (int left = val; left > count - 1; left--) {
-                array_2d[left][count - 1] = num;
+            //左
+            for (int left = last; left > begin; left--) {
+                array_2d[left][begin] = num;
                 num++;
             }
 
+            begin++;
+            last--;
             count++;
         }
 
-        if (oldVal % 2 == 1) {
+        if (val % 2 == 1) {
             array_2d[loop][loop] = num;
         }
 
