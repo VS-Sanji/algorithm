@@ -19,7 +19,7 @@ public class doublyLinkdeList {
         size = 0;
         virtualHead = new doublyLinkedListNode();
         virtualTail = new doublyLinkedListNode();
-        virtualTail.next = virtualTail;
+        virtualHead.next = virtualTail;
         virtualTail.pre = virtualHead;
     }
 
