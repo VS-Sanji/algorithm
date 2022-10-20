@@ -1,1 +1,1 @@
-# algorithm of song
+# algorithm study of Song
