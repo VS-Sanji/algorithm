@@ -20,6 +20,7 @@ public class getIntersectionNode {
             temp = temp.next;
         }
 
+        //如果有交点，将较长的链表多出的部分不予考虑，因为一定不会是这部分节点，所以将指针后移至较短链表的头节点平行处
         int max = Math.max(countA, countB);
         int min = Math.min(countA, countB);
         if (countA > countB) {
@@ -32,6 +33,7 @@ public class getIntersectionNode {
             }
         }
 
+        //比较两个指针指向的节点是否相同，相同的即为交点
         while (headA != headB) {
             headA = headA.next;
             headB = headB.next;
