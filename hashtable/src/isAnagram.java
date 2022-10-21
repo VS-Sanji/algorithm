@@ -1,5 +1,3 @@
-import java.util.Hashtable;
-
 /**
  * 有效字母异位词
  *      判断两个词是否是由 相同的次数的 字母 所组成的，字母位置可以不一样
@@ -14,7 +12,6 @@ import java.util.Hashtable;
  *      遍历字串，同样的逻辑，不过是自减操作，如果最后数组的所有元素均为0，表示两个字串是有效异位词
  */
 public class isAnagram {
-    new Hashtable
     public static boolean isAnagram(String s, String t) {
         int[] hash = new int[26];
         for (int i = 0; i < s.length(); i++) {
