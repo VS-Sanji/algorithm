@@ -1,20 +1,20 @@
 package linkedList;
 
-import linkedListNode.singlyLinkedListNode;
+import linkedListNode.SinglyLinkedListNode;
 
 /**
  * 含有虚拟头节点的链表，其有效节点的索引从0开始，以1递增，索引不指向虚拟头节点，而是以有效节点的头节点开始
  */
 
-public class singlyLinkedlist {
+public class SinglyLinkedlist {
 
     public int size;//链表长度，即节点个数(不包括虚拟头节点)
 
-    public singlyLinkedListNode virtualHead;//虚拟头节点
+    public SinglyLinkedListNode virtualHead;//虚拟头节点
 
-    public singlyLinkedlist() {
+    public SinglyLinkedlist() {
         size = 0;
-        virtualHead = new singlyLinkedListNode();
+        virtualHead = new SinglyLinkedListNode();
     }
 
     //获取第index节点的数值
@@ -24,7 +24,7 @@ public class singlyLinkedlist {
             return -1;
         }
 
-        singlyLinkedListNode temp = virtualHead.next;
+        SinglyLinkedListNode temp = virtualHead.next;
         for (int i = 0; i <= index; i++) {
             temp = temp.next;
         }
@@ -62,12 +62,12 @@ public class singlyLinkedlist {
         size++;
 
         //找到指定位置节点的前驱节点
-        singlyLinkedListNode pre = virtualHead;
+        SinglyLinkedListNode pre = virtualHead;
         for (int i = 0; i < index; i++) {
             pre = pre.next;
         }
 
-        singlyLinkedListNode newNode = new singlyLinkedListNode(val);
+        SinglyLinkedListNode newNode = new SinglyLinkedListNode(val);
         newNode.next = pre.next;
         pre.next = newNode;
 
@@ -81,7 +81,7 @@ public class singlyLinkedlist {
         }
 
         size--;
-        singlyLinkedListNode pre = virtualHead;
+        SinglyLinkedListNode pre = virtualHead;
         for (int i = 0; i < index; i++) {
             pre = pre.next;
         }

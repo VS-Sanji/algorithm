@@ -1,21 +1,21 @@
 package linkedListNode;
 
-public class doublyLinkedListNode {
+public class DoublyLinkedListNode {
 
     public int val;
 
-    public doublyLinkedListNode pre;
+    public DoublyLinkedListNode pre;
 
-    public doublyLinkedListNode next;
+    public DoublyLinkedListNode next;
 
-    public doublyLinkedListNode() {
+    public DoublyLinkedListNode() {
     }
 
-    public doublyLinkedListNode(int val) {
+    public DoublyLinkedListNode(int val) {
         this.val = val;
     }
 
-    public doublyLinkedListNode(int val, doublyLinkedListNode pre, doublyLinkedListNode next) {
+    public DoublyLinkedListNode(int val, DoublyLinkedListNode pre, DoublyLinkedListNode next) {
         this.val = val;
         this.pre = pre;
         this.next = next;

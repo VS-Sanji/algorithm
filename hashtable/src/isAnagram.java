@@ -11,7 +11,7 @@
  *      遍历字串，将字串的字母与 a 做差，所得即为该字母所对应下标，将该下标的值 自增（表示出现一次）
  *      遍历字串，同样的逻辑，不过是自减操作，如果最后数组的所有元素均为0，表示两个字串是有效异位词
  */
-public class isAnagram {
+public class IsAnagram {
     public static boolean isAnagram(String s, String t) {
         int[] hash = new int[26];
         for (int i = 0; i < s.length(); i++) {

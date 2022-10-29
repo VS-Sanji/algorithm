@@ -1,13 +1,13 @@
-import linkedListNode.singlyLinkedListNode;
+import linkedListNode.SinglyLinkedListNode;
 
 /**
  * 找出两链表相交的节点
  */
-public class getIntersectionNode {
-    public singlyLinkedListNode getIntersetionNode(singlyLinkedListNode headA, singlyLinkedListNode headB) {
+public class GetIntersectionNode {
+    public SinglyLinkedListNode getIntersetionNode(SinglyLinkedListNode headA, SinglyLinkedListNode headB) {
         int countA = 1;
         int countB = 1;
-        singlyLinkedListNode temp;
+        SinglyLinkedListNode temp;
         temp = headA;
         while (temp.next != null) {
             countA++;

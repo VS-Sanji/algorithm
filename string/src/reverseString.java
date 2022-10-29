@@ -1,7 +1,7 @@
 /**
  * 给一个字符串，将其反转，要求不适用额外的空间
  */
-public class reverseString {
+public class ReverseString {
 
     public static void reverseString(char[] s) {
 

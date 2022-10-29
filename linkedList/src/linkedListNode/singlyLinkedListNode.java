@@ -1,24 +1,24 @@
 package linkedListNode;
 
-public class singlyLinkedListNode {
+public class SinglyLinkedListNode {
 
     //值
     public int val;
 
     //下个节点
-    public singlyLinkedListNode next;
+    public SinglyLinkedListNode next;
 
     //无参构造
-    public singlyLinkedListNode() {
+    public SinglyLinkedListNode() {
     }
 
     //有参构造（1个参数）
-    public singlyLinkedListNode(int val) {
+    public SinglyLinkedListNode(int val) {
         this.val = val;
     }
 
     //有参构造（两个参数）
-    public singlyLinkedListNode(int val, singlyLinkedListNode next) {
+    public SinglyLinkedListNode(int val, SinglyLinkedListNode next) {
         this.val = val;
         this.next = next;
     }

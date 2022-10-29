@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Timer;
 
 /**
  * 题意：给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，
@@ -12,7 +11,7 @@ import java.util.Timer;
  * 示例： 给定数组 nums = [1, 0, -1, 0, -2, 2]，和 target = 0。
  * 满足要求的四元组集合为： [ [-1, 0, 0, 1], [-2, -1, 1, 2], [-2, 0, 0, 2] ]
  */
-public class fourSum {
+public class FourSum {
 
     public static List<List<Integer>> fourSum(int[] nums, int target) {
         int left;

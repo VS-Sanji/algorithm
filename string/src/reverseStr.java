@@ -6,7 +6,7 @@
  *      输入: s = "abcdefg", k = 2
  *      输出: "bacdfeg"
  */
-public class reverseStr {
+public class ReverseStr {
 
 
     public static String reverseStr(String s, int k) {

@@ -1,24 +1,24 @@
 package linkedList;
 
-import linkedListNode.doublyLinkedListNode;
+import linkedListNode.DoublyLinkedListNode;
 
 /**
  * 双向链表
  */
 
 
-public class doublyLinkdeList {
+public class DoublyLinkdeList {
 
     //链表长
     int size;
 
     //虚拟头，尾节点
-    doublyLinkedListNode virtualHead, virtualTail;
+    DoublyLinkedListNode virtualHead, virtualTail;
 
-    public doublyLinkdeList() {
+    public DoublyLinkdeList() {
         size = 0;
-        virtualHead = new doublyLinkedListNode();
-        virtualTail = new doublyLinkedListNode();
+        virtualHead = new DoublyLinkedListNode();
+        virtualTail = new DoublyLinkedListNode();
         virtualHead.next = virtualTail;
         virtualTail.pre = virtualHead;
     }
@@ -29,7 +29,7 @@ public class doublyLinkdeList {
             return -1;
         }
 
-        doublyLinkedListNode cur;
+        DoublyLinkedListNode cur;
         if (index > size >> 1) {//判断靠头近还是靠尾近
             cur = virtualTail;
             for (int i = size - 1; i >= index; i--) {
@@ -67,11 +67,11 @@ public class doublyLinkdeList {
 
         size++;
 
-        doublyLinkedListNode cur = virtualHead;
+        DoublyLinkedListNode cur = virtualHead;
         for (int i = 0; i <= index; i++) {
             cur = cur.next;
         }
-        doublyLinkedListNode newNode = new doublyLinkedListNode(val);
+        DoublyLinkedListNode newNode = new DoublyLinkedListNode(val);
         newNode.pre = cur.pre;
         newNode.next = cur.pre.next;
         cur.pre.next = newNode;
@@ -86,7 +86,7 @@ public class doublyLinkdeList {
 
         size--;
 
-        doublyLinkedListNode cur;
+        DoublyLinkedListNode cur;
         if (index > size >> 1) {
             cur = virtualTail;
             for (int i = size; i >= index; i--) {

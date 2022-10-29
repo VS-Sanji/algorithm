@@ -1,18 +1,18 @@
-import linkedListNode.singlyLinkedListNode;
+import linkedListNode.SinglyLinkedListNode;
 
 /**
  * 删除链表倒数第n个节点
  */
 
-public class removeNthFromEnd {
+public class RemoveNthFromEnd {
 
 
-    public singlyLinkedListNode removeNthFromEnd(singlyLinkedListNode head, int n) {
-        singlyLinkedListNode virtualNode = new singlyLinkedListNode();
+    public SinglyLinkedListNode removeNthFromEnd(SinglyLinkedListNode head, int n) {
+        SinglyLinkedListNode virtualNode = new SinglyLinkedListNode();
         virtualNode.next = head;
         //快慢指针
-        singlyLinkedListNode slow = virtualNode;
-        singlyLinkedListNode fast = virtualNode;
+        SinglyLinkedListNode slow = virtualNode;
+        SinglyLinkedListNode fast = virtualNode;
 
         //快指针先向前移动n+1步
         for (int i = 0; i <= n; i++) {

@@ -16,7 +16,7 @@ import java.util.Map;
  *          如果期间发现当前数所需的数在集合中，说明两者之和就为目标值，返回对应下标
  *          另外，不仅需要存这个数，还需要存它在数组中的下标，所以考虑使用map集合
  */
-public class twoSum {
+public class TwoSum {
 
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();

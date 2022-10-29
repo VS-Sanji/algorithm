@@ -21,7 +21,7 @@ import java.util.Map;
  *      一共四个数组，分成AB、CD进行遍历的话时间复杂度最低，是O(n^2)
  *      如果分成A、BCD这种的话，时间复杂度就是O(n^3)了
  */
-public class fourSumCount {
+public class FourSumCount {
 
     public static int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
 

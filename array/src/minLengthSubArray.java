@@ -25,7 +25,7 @@
  *          依次进行，直到遍历完成
  */
 
-public class minLengthSubArray {
+public class MinLengthSubArray {
     public static void main(String[] args) {
         int[] nums = {1, 3, 5, 2, 2, 7};
         int val = 9;

@@ -15,7 +15,7 @@
  *      4.更新区间后，重复上述逻辑，继续缩小区间，直到找到目标值（返回下标），或者不存在目标值（返回-1）
  *      1-4是不断重复的逻辑，对应循环结构
  */
-public class binarySearch {
+public class BinarySearch {
 
     public static void main(String[] args) {
 

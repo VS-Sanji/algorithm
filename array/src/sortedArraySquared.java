@@ -10,7 +10,7 @@ import java.util.Arrays;
  *      每次填入的数，其对应指针便往数组中间元素靠近，最终头尾指针相差1时就说明将结束排序
  */
 
-public class sortedArraySquared {
+public class SortedArraySquared {
     public static void main(String[] args) {
         int[] array = {-3, -2, -1, 0, 1, 3, 6};
         int[] returnNewArray = returnNewArray(array);

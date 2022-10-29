@@ -7,7 +7,7 @@
  *      canConstruct("aa", "ab") -> false
  *      canConstruct("aa", "aab") -> true
  */
-public class canConstruct {
+public class CanConstruct {
 
     public static boolean canConstruct(String ransomNote, String magazine) {
         int[] nums = new int[26];

@@ -1,11 +1,10 @@
-import java.net.InterfaceAddress;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * 两个数组的交集：如【1， 2， 2， 1】 与 【2， 2】交集是 2（去重)
  */
-public class intersection {
+public class Intersection {
 
     public static int[] intersection(int[] array1, int[] array2) {
         if (array1 == null || array1.length == 0 || array2 == null || array2.length == 0) {

@@ -1,19 +1,19 @@
 package linkedListNode;
 
-public class circularLinkedListNode {
+public class CircularLinkedListNode {
 
     public int val;
 
-    public circularLinkedListNode next;
+    public CircularLinkedListNode next;
 
-    public circularLinkedListNode() {
+    public CircularLinkedListNode() {
     }
 
-    public circularLinkedListNode(int val) {
+    public CircularLinkedListNode(int val) {
         this.val = val;
     }
 
-    public circularLinkedListNode(int val, circularLinkedListNode next) {
+    public CircularLinkedListNode(int val, CircularLinkedListNode next) {
         this.val = val;
         this.next = next;
     }

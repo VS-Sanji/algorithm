@@ -1,17 +1,17 @@
-import linkedListNode.singlyLinkedListNode;
+import linkedListNode.SinglyLinkedListNode;
 
 /**
  * 两两交换节点
  */
-public class exchangeNode {
+public class ExchangeNode {
 
-    public singlyLinkedListNode exchangeNode(singlyLinkedListNode head) {
-        singlyLinkedListNode virtualNode = new singlyLinkedListNode();
+    public SinglyLinkedListNode exchangeNode(SinglyLinkedListNode head) {
+        SinglyLinkedListNode virtualNode = new SinglyLinkedListNode();
         virtualNode.next = head;
 
-        singlyLinkedListNode cur = virtualNode;
-        singlyLinkedListNode tempOne;
-        singlyLinkedListNode tempTwo;
+        SinglyLinkedListNode cur = virtualNode;
+        SinglyLinkedListNode tempOne;
+        SinglyLinkedListNode tempTwo;
 
         //当同时满足cur的下一个不是空，下下一个也不是空，说明后面至少还有两个节点，继续循环进行交换
         while (cur.next != null && cur.next.next != null) {

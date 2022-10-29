@@ -17,7 +17,7 @@ import java.util.Arrays;
  *      与二分法类似，在处理的过程当中要坚持循环不变量规则
  */
 
-public class generateMatrix {
+public class GenerateMatrix {
     public static void main(String[] args) {
         int val = 3;
         int[][] matrix = genMatrix(val);

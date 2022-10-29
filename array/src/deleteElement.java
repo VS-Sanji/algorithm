@@ -12,7 +12,7 @@
  *      慢指针用来记录移除后数组的值
  */
 
-public class deleteElement {
+public class DeleteElement {
     public static void main(String[] args) {
         int[] oldArray = {1, 2, 3, 3, 44, 4, 5, 3};
         int val = 3;

@@ -14,7 +14,7 @@ import java.util.Set;
  *
  * 题目中说不是 快乐数的话，那么它求和后的值会重复出现，而快乐书不会重复出现，直到变成 1.即只需要判断是否有重复的值出现在 和集 里面，考虑使用哈希表
  */
-public class isHappy {
+public class IsHappy {
 
     public static boolean isHappy(int n) {
         Set<Integer> set = new HashSet<>();
