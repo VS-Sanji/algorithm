@@ -30,7 +30,7 @@ public class ReverseWords {
             return null;
         }
 
-        //处理字串，去除前后空格，以及中间多余空格（保留一个）
+        //1.处理字串，去除前后空格，以及中间多余空格（保留一个）
         //双指针法去除多余空格
         int start = 0;
         int end = s.length() - 1;
@@ -53,7 +53,7 @@ public class ReverseWords {
         String s1 = new String(trimSpaceStr);
         char[] chars = s1.toCharArray();
 
-        //反转trim后的字串
+        //2.反转trim后的字串
         int left = 0;
         int right = chars.length - 1;
 
@@ -69,7 +69,7 @@ public class ReverseWords {
         trimSpaceStr = new StringBuilder(String.valueOf(chars));
 
 
-        //给每个单词反转，得到最后结果
+        //3.给每个单词反转，得到最后结果
         int begin = 0;
         int last = 0;
         StringBuilder tempReStr = new StringBuilder();
