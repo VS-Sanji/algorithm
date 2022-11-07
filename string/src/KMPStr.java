@@ -6,12 +6,45 @@ import java.util.Arrays;
  */
 public class KMPStr {
 
-    public static void main(String[] args) {
-        String s = "aabaaf";
-        int[] next = getNext(s);
-        System.out.println(Arrays.toString(next));
+
+    public static int KMPStr(String haystack, String needle) {
+
+        if (haystack.length() == 0 || haystack == null) {
+            return -1;
+        }
+
+        char[] chars = haystack.toCharArray();
+
+        int[] next = getNext(needle);
+
+        int j = 0;//指向当前模式串的第 j 个字符
+        for (int i = 0; i < haystack.length(); i++) {
+
+            //匹配不上时j的回退过程，i不用回退
+            while (j > 0 && chars[i] != needle.charAt(j)) {
+                j = next[j - 1];
+            }
+
+            if (chars[i] == needle.charAt(j)) {
+                j++;
+            }
+            //当j 等于 needle的长度，说明找到了
+            if (j == needle.length()) {
+                return i + 1 - j;
+            }
+
+        }
+
+        return -1;
     }
 
+    //求出模式串的前缀表
+
+    /**
+     * 1.初始化 i，j
+     * 2.前后缀不相等的情况
+     * 3.前后缀相等的情况
+     */
     public static int[] getNext(String s) {
 
         char[] chars = s.toCharArray();
@@ -44,8 +77,6 @@ public class KMPStr {
                 //记录至 i 下标 为止的字串的最大相同前后缀的长度值
                 next[i] = j;
             }
-
-
         }
 
         return next;
