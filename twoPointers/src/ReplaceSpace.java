@@ -1,6 +1,6 @@
 public class ReplaceSpace {
     public String replaceSpace(String s) {
-//s是空串直接返回
+        //s是空串直接返回
         if (s == null) {
             return null;
         }
