@@ -42,7 +42,7 @@ public class ReplaceSpace {
             return s;
         }
 
-        //left指针指向原字符串末尾
+        //left指针指向原字符串首部
         int left = s.length() - 1;
         s += stringBuilder;
         //right指针指向新字符串末尾
