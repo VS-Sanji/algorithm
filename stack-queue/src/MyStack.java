@@ -1,5 +1,3 @@
-import com.sun.org.apache.bcel.internal.generic.POP;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -48,6 +46,42 @@ public class MyStack {
     /** Returns whether the stack is empty. */
     public boolean empty() {
         return queue1.isEmpty();
+    }
+
+
+    /**
+     * 只用一个队列实现的栈
+     * 即将弹出的元素又重新装进这个队列中，以达到后进先出的效果，如同栈一样
+     */
+    class innerClassUseOneQueue4Stack {
+
+        Queue queue;
+
+        //push
+        //直接在添加元素的时候就把队列中元素顺序调整好，新添加的放到队首去
+        void push(int x) {
+            int size = queue.size();
+            queue.offer(x);
+            while (size > 0) {
+                queue.offer(queue.poll());
+                size--;
+            }
+        }
+
+        //pop
+        int pop() {
+            return (int) queue.poll();
+        }
+
+        //top
+        int top() {
+            return (int) queue.peek();
+        }
+
+        //empty
+        boolean empty() {
+            return queue.isEmpty();
+        }
     }
 }
 
