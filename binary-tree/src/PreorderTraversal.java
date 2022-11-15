@@ -1,6 +1,8 @@
 import treenode.TreeNode;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -30,6 +32,8 @@ public class PreorderTraversal {
      *      同理，preorderTraversal(root.right, res);
      *          这么写完以后，就是一个完整的单层递归的逻辑
      */
+
+    //递归解法
     public static void preorderTraversal(TreeNode root, List<Integer> res) {
 
         //终止条件
@@ -38,10 +42,42 @@ public class PreorderTraversal {
         }
 
         //单层逻辑，自己调用自己来完善单层逻辑
+        //自己调用自己，只是参数变为子问题需要的参数，完成递归函数的补完
         res.add(root.val);
         preorderTraversal(root.left, res);
         preorderTraversal(root.right, res);
     }
+
+    //非递归解法（利用栈数据结构来完成，递归可以转换成栈，本身也是栈结构）
+    public static List<Integer> preorderTraversalByStack(TreeNode root, List<Integer> list) {
+        //前序遍历 中左右
+        Deque stack = new ArrayDeque();
+
+        if (root == null) {
+            return list;
+        }
+
+        stack.push(root);
+        while (!stack.isEmpty()) {
+
+            TreeNode node = (TreeNode) stack.pop();
+            list.add(node.val);
+
+            //因为结果要的是 左右，所以先压栈右
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+
+            //后压栈左
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+
+        }
+
+        return list;
+    }
+
 
 
 }
