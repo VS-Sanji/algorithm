@@ -31,7 +31,7 @@ public class PostorderTraversal {
 
     //非递归解法（利用栈数据结构来完成，递归可以转换成栈，本身也是栈结构）
     //后序遍历可以由前序遍历修改得来，前序是 中左右， 后序是 左右中，只要先压栈 左，后压 右，那么先弹 右，后弹 左，最后得到 中右左，将其反转就得到了 左右中
-    public static List<Integer> preorderTraversalByStack(TreeNode root, List<Integer> list) {
+    public static List<Integer> postorderTraversalByStack(TreeNode root, List<Integer> list) {
         //后序遍历 左右中
         Deque stack = new ArrayDeque();
 
