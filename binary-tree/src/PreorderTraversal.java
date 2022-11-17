@@ -1,9 +1,6 @@
 import treenode.TreeNode;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 /**
  * 二叉树之前序遍历
@@ -51,7 +48,7 @@ public class PreorderTraversal {
     //非递归解法（利用栈数据结构来完成，递归可以转换成栈，本身也是栈结构）
     public static List<Integer> preorderTraversalByStack(TreeNode root, List<Integer> list) {
         //前序遍历 中左右
-        Deque stack = new ArrayDeque();
+        Deque<TreeNode> stack = new LinkedList<>();
 
         if (root == null) {
             return list;
@@ -78,6 +75,39 @@ public class PreorderTraversal {
         return list;
     }
 
+    //非递归的统一方式 利用栈和空指针标记
+    public static List<Integer> preorderTraversalByStackAndNull(TreeNode root, List<Integer> res) {
+
+        Deque<TreeNode> stack = new LinkedList<>();
+
+        if (root == null) {
+            return res;
+        }
+
+        stack.push(root);
+        while (!stack.isEmpty()) {
+
+            TreeNode cur = (TreeNode) stack.peek();
+            if (cur != null) {
+                stack.pop(); //将该节点弹出，避免重复操作，下面再将右中左节点添加到栈中
+
+                if (cur.right != null) {stack.push(cur.right);}//添加右节点（空节点不入栈）
+
+                if (cur.left != null) {stack.push(cur.left);}//添加左节点（空节点不入栈）
+
+                stack.push(cur);//添加中节点
+                stack.push(null);//中节点访问过，但是还没有处理，加入空节点做为标记。
+
+            } else {// 只有遇到空节点的时候，才将下一个节点放进结果集
+
+                stack.pop();//弹出null
+                TreeNode need = (TreeNode) stack.pop();//弹出该入结果集的节点
+                res.add(need.val);//存入结果集
+            }
+        }
+
+        return res;
+    }
 
 
 }
