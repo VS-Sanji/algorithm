@@ -9,15 +9,15 @@ public class LevelOrder {
 
     public static List<List<Integer>> levelOrder(TreeNode root) {
 
-        Deque<TreeNode> queue = new LinkedList<>();
+        //传入null，直接返回
+        if (root == null) {
+            return new ArrayList<>();
+        }
 
         List<List<Integer>> lists = new ArrayList<>();
         List<Integer> integers = new ArrayList<>();
 
-        //传入null，直接返回
-        if (root == null) {
-            return lists;
-        }
+        Deque<TreeNode> queue = new LinkedList<>();
 
         //将初始根节点入队列
         queue.offer(root);
